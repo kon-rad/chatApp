@@ -16,8 +16,8 @@ const RoomDetail = ({ id, name, currentUserName }) => {
     dispatch(fetchRoomMessages(id));
   }, [id]);
 
+  // polling for new messages
   useInterval(() => {
-    // polling for new messages
     dispatch(fetchRoomMessages(id));
   }, 1000);
 
