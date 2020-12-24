@@ -15,5 +15,6 @@ button.Button__link:focus {
   border-radius: var(--radius1);
   padding: 8px;
   border: solid 1px var(--dd_red);
+  cursor: pointer;
   font-size: 16px;
 }

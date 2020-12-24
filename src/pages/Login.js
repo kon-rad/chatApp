@@ -11,8 +11,8 @@ const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (!username) return;
     dispatch(loginUser(username));
     history.push("/chat");
@@ -20,7 +20,6 @@ const Login = () => {
   // handle submit on enter key
   const handleOnKeyDown = (event) => {
     if (event.key === "Enter") {
-      event.preventDefault();
       event.stopPropagation();
       handleSubmit(event);
     }
