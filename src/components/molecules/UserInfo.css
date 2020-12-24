@@ -1,0 +1,12 @@
+.UserInfo {
+  padding: 10px 20px;
+}
+.UserInfo__title {
+  font-size: 20px;
+  margin-bottom: 4px;
+  color: var(--white);
+}
+.UserInfo__time {
+  font-size: 13px;
+  color: var(--white);
+}

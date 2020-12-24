@@ -1,11 +1,15 @@
 import React from "react";
+import classnames from "classnames";
+import "./TextInput.css";
 
-const TextInput = ({ className = "", handleOnChange, name }) => {
+const TextInput = ({ className = "", onChange, name, value, placeholder }) => {
   return (
     <input
-      className={["TextInput", className].join(" ")}
-      onChange={handleOnChange}
+      className={classnames("TextInput", className)}
+      onChange={onChange}
       name={name}
+      placeholder={placeholder}
+      value={value}
     />
   );
 };

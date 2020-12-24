@@ -17,6 +17,7 @@ const Login = () => {
     dispatch(loginUser(username));
     history.push("/chat");
   };
+  // todo: support login on enter key
   return (
     <div className="container-fluid">
       <div className="row">
@@ -24,9 +25,10 @@ const Login = () => {
           <TextInput
             name="username"
             className="username_input"
-            handleOnChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
           />
-          <Button className="login_submit" handleOnClick={handleSubmit}>
+          <Button className="login_submit" onClick={handleSubmit}>
             Join the DoorDash Chat!
           </Button>
         </div>

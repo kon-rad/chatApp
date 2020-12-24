@@ -1,6 +1,6 @@
 import React from "react";
 
-const Title = ({ classNames = [], children }) => {
+const Heading1 = ({ classNames = [], children }) => {
   return <h1 className={["title", ...classNames].join(" ")}>{children}</h1>;
 };
 
