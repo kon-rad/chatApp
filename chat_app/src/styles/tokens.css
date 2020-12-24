@@ -1,0 +1,12 @@
+:root {
+  /* color tokens */
+  --dd_red: #ee1a41;
+  --dd_red_dark: #800d1f;
+  --light_gray: #eff1f2;
+  --dark_gray_text: #696969;
+  --black_text: #333333;
+  --blue_text: #4a8fe2;
+  --gray_border: #d7d8de;
+  --dark_gray_border: #d7d8de;
+  --white: #fffff;
+}

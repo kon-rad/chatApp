@@ -1,0 +1,35 @@
+.ChatHome__container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.ChatroomList {
+  width: 300px;
+  background-color: var(--dd_red);
+  color: var(--white);
+}
+.Chatroom__mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Chatroom__main {
+  width: 100%;
+  padding: 40px 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  color: var(--dark_gray_text);
+}
+.Messages__list {
+  flex-grow: 1;
+  width: 100%;
+  background-color: var(--light_gray);
+}
+.UserInput__container {
+  padding: 25px 35px 25px 25px;
+  border-top: var(--gray_border);
+  display: flex;
+  flex-direction: row;
+}

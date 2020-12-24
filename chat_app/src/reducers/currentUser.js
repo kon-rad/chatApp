@@ -10,7 +10,8 @@ export const loginUser = (username) => {
 };
 
 const initState = {
-  name: "",
+  name: "test 1",
+  isLoggedIn: false,
 };
 
 const currentUser = (state = initState, action) => {
@@ -19,6 +20,7 @@ const currentUser = (state = initState, action) => {
       return {
         ...state,
         name: action.payload,
+        isLoggedIn: true,
       };
     default:
       return state;
