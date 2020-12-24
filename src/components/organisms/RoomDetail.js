@@ -31,6 +31,7 @@ const RoomDetail = ({ id, name, currentUserName }) => {
   const scrollToBottom = () => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
+  useEffect(scrollToBottom, [(messages || []).length]);
   const messagesEndRef = useRef(null);
 
   const messageSubmit = () => {
