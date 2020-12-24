@@ -11,10 +11,9 @@ export const loginUser = (username) => {
 };
 
 const initState = {
-  // todo reset after dev complete
-  username: "test 1",
-  isLoggedIn: true,
-  startTime: new Date(),
+  username: "",
+  isLoggedIn: false,
+  startTime: null,
 };
 
 const currentUser = (state = initState, { type, payload }) => {

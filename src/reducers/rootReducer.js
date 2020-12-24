@@ -4,7 +4,7 @@ import roomsDetail from "./roomsDetail";
 import messages from "./messages";
 import { combineReducers } from "redux";
 
-//Combine all the sub reducers
+// combine all the sub reducers
 const rootReducer = combineReducers({
   currentUser,
   roomsDetail,

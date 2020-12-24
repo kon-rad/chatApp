@@ -25,7 +25,6 @@ const Login = () => {
       handleSubmit(event);
     }
   };
-  // todo: support login on enter key
   return (
     <div className="Login__container">
       <div className="Login">

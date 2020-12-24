@@ -1,13 +1,13 @@
-.RoomList {
+.RoomsList {
   width: 300px;
   background-color: var(--dd_red);
   color: var(--white);
 }
-.RoomList__item {
+.RoomsList__item {
   font-size: 18px;
   cursor: pointer;
   padding: 14px 20px;
 }
-.RoomList__item.active {
+.RoomsList__item.active {
   background-color: var(--dd_red_dark);
 }

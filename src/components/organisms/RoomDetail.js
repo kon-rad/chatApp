@@ -9,7 +9,7 @@ import "./RoomDetail.css";
 
 const RoomDetail = ({ id, name, currentUserName }) => {
   const dispatch = useDispatch();
-  // get room detail and messages when room id prop changes
+  // fetch rooms detail and messages when room id prop changes
   useEffect(() => {
     dispatch(fetchRoomsDetail(id));
     dispatch(fetchRoomMessages(id));
@@ -34,7 +34,7 @@ const RoomDetail = ({ id, name, currentUserName }) => {
     // clear message text state
     setMessageInputValue("");
   };
-  // handle submit on enter key
+  // submit message on enter key
   const handleOnKeyDown = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();

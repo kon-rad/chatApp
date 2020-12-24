@@ -9,18 +9,17 @@ import "./ChatHome.css";
 
 const ChatHome = (props) => {
   const [currentRoomId, setCurrentRoomId] = useState();
-  const dispatch = useDispatch();
   const history = useHistory();
+  // user must log in before being allowed to navigate to chat page
+  const isLoggedIn = useSelector((state) => state.currentUser.isLoggedIn);
+  if (!isLoggedIn) history.push("/");
+
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRooms());
   }, []);
 
   const username = useSelector((state) => state.currentUser.username);
-  const isLoggedIn = useSelector((state) => state.currentUser.isLoggedIn);
-
-  // user must log in before being allowed to navigate to chat page
-  if (!isLoggedIn) history.push("/");
-
   const startTime = useSelector((state) => state.currentUser.startTime);
 
   const rooms = useSelector((state) => state.rooms.data);
@@ -35,8 +34,6 @@ const ChatHome = (props) => {
       currentRoom = rooms.find((room) => room.id === currentRoomId);
     }
   }
-  console.log("rooms", rooms, currentRoomId);
-  console.log("currentRoom", currentRoom);
 
   const minutesOnline = getMinutesElapsed(startTime);
   return (
@@ -46,10 +43,7 @@ const ChatHome = (props) => {
         <RoomsList
           rooms={rooms}
           currentRoomName={currentRoom && currentRoom.name}
-          onClick={(id) => {
-            console.log("room id clicked", id);
-            setCurrentRoomId(id);
-          }}
+          onClick={(id) => setCurrentRoomId(id)}
         />
       </div>
       {currentRoom && (

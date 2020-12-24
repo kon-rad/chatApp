@@ -7,12 +7,12 @@ const RoomsList = ({ rooms = [], currentRoomName, onClick }) => {
     return null;
   }
   return (
-    <div className="RoomList">
+    <div className="RoomsList">
       {rooms.map(({ name, id }) => (
         <div
           key={`${name}_${id}`}
           className={classnames(
-            "RoomList__item",
+            "RoomsList__item",
             name === currentRoomName ? "active" : false
           )}
           onClick={() => onClick(id)}
