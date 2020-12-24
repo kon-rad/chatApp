@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRoomsDetail } from "../../reducers/roomsDetail";
 import { fetchRoomMessages, postMessage } from "../../reducers/messages";
+import { useInterval } from "../../utils/hooks";
 import TextInput from "../atoms/TextInput";
 import Message from "../atoms/Message";
 import Button from "../atoms/Button";
@@ -14,6 +15,11 @@ const RoomDetail = ({ id, name, currentUserName }) => {
     dispatch(fetchRoomsDetail(id));
     dispatch(fetchRoomMessages(id));
   }, [id]);
+
+  useInterval(() => {
+    // polling for new messages
+    dispatch(fetchRoomMessages(id));
+  }, 1000);
 
   const [messageInputValue, setMessageInputValue] = useState("");
   const userNamesList = useSelector(

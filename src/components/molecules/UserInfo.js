@@ -3,7 +3,9 @@ import Heading2 from "../atoms/Heading2";
 import "./UserInfo.css";
 
 const UserInfo = ({ username, minutesOnline }) => {
-  const timeOnlineCopy = `${minutesOnline} minutes`;
+  const timeOnlineCopy = `${minutesOnline} minute${
+    minutesOnline === 1 ? "" : "s"
+  }`;
   return (
     <div className="UserInfo">
       <Heading2 className={"UserInfo__title"}>{username}</Heading2>
