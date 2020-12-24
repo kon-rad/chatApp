@@ -11,7 +11,7 @@ export const loginUser = (username) => {
 };
 
 const initState = {
-  // todo: add fetching and error status
+  // todo: add pending and error status
   api: {},
   username: "",
   isLoggedIn: false,

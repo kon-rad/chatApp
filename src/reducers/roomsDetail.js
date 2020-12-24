@@ -15,7 +15,7 @@ export const fetchRoomsDetail = (id) => async (dispatch) => {
 };
 
 const initState = {
-  // todo: add fetching and error status
+  // todo: add pending and error status
   api: {},
 };
 
