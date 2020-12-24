@@ -1,6 +1,7 @@
 .TextInput {
-  padding: 10px 18px;
+  padding: 14px 18px;
   border: solid 1px var(--gray_border);
-  border-radius: 4px;
+  border-radius: var(--radius1);
+  font-size: 16px;
   color: var(--dark_gray_text);
 }

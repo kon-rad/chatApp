@@ -28,6 +28,21 @@ const RoomDetail = ({ id, name, currentUserName }) => {
   useEffect(scrollToBottom, [messages]);
   const messagesEndRef = useRef(null);
 
+  const messageSubmit = () => {
+    // dispatch thunk to post message
+    dispatch(postMessage(id, currentUserName, messageInputValue));
+    // clear message text state
+    setMessageInputValue("");
+  };
+  // handle submit on enter key
+  const handleOnKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      event.stopPropagation();
+      messageSubmit();
+    }
+  };
+
   return (
     <div className="RoomDetail__container">
       <div className="RoomDetail__header">
@@ -35,16 +50,18 @@ const RoomDetail = ({ id, name, currentUserName }) => {
         <div className="RoomDetail__users">
           <span className="RoomDetail__currentUserName">{currentUserName}</span>
           {userNamesList && userNamesList.length > 0 && ", "}
-          {userNamesList && userNamesList.join(", ")}
+          {userNamesList &&
+            userNamesList.filter((name) => name !== currentUserName).join(", ")}
         </div>
       </div>
       <div className="RoomDetail__messages">
         {messages &&
-          messages.map((msg) => {
+          messages.map((msg, i) => {
             return (
               <Message
                 isCurrentUser={msg.name === currentUserName}
                 author={msg.name}
+                key={`${msg.name}_${i}`}
               >
                 {msg.message}
               </Message>
@@ -54,20 +71,17 @@ const RoomDetail = ({ id, name, currentUserName }) => {
       </div>
       <div className="RoomDetail__inputContainer">
         <TextInput
-          placeHolder="Type a message..."
+          placeholder="Type a message..."
           name="message_input"
           value={messageInputValue}
           onChange={(e) => setMessageInputValue(e.target.value)}
           className="RoomDetail__textInput"
+          onKeyDown={handleOnKeyDown}
         />
         <Button
           type="link"
-          onClick={() => {
-            // dispatch thunk to post message
-            dispatch(postMessage(id, currentUserName, messageInputValue));
-            // clear message text state
-            setMessageInputValue("");
-          }}
+          className="RoomDetail__submitButton"
+          onClick={messageSubmit}
         >
           Send
         </Button>

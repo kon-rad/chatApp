@@ -1,6 +1,14 @@
-.posts__title {
-  margin-bottom: 60px;
+.Login__container {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  align-items: center;
+  height: 100vh;
+}
+.Login {
+  display: flex;
+  flex-direction: column;
+}
+.Login__input {
+  width: 400px;
+  margin-bottom: 20px;
 }

@@ -1,0 +1,19 @@
+.Button__link {
+  color: var(--blue_text);
+  background-color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
+button.Button__link:focus {
+  outline: 0;
+}
+.Button__action {
+  background-color: var(--dd_red);
+  color: var(--white);
+  border-radius: var(--radius1);
+  padding: 8px;
+  border: solid 1px var(--dd_red);
+  font-size: 16px;
+}

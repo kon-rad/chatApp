@@ -17,21 +17,29 @@ const Login = () => {
     dispatch(loginUser(username));
     history.push("/chat");
   };
+  // handle submit on enter key
+  const handleOnKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      event.stopPropagation();
+      handleSubmit(event);
+    }
+  };
   // todo: support login on enter key
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-xs-12 col-md-12 posts__title">
-          <TextInput
-            name="username"
-            className="username_input"
-            onChange={(e) => setUsername(e.target.value)}
-            value={username}
-          />
-          <Button className="login_submit" onClick={handleSubmit}>
-            Join the DoorDash Chat!
-          </Button>
-        </div>
+    <div className="Login__container">
+      <div className="Login">
+        <TextInput
+          name="username"
+          className="Login__input"
+          onChange={(e) => setUsername(e.target.value)}
+          value={username}
+          placeholder="Type your username..."
+          onKeyDown={handleOnKeyDown}
+        />
+        <Button className="Login__submit" onClick={handleSubmit}>
+          Join the DoorDash Chat!
+        </Button>
       </div>
     </div>
   );
