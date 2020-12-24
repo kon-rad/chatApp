@@ -31,7 +31,6 @@ const RoomDetail = ({ id, name, currentUserName }) => {
   const scrollToBottom = () => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
-  useEffect(scrollToBottom, [messages]);
   const messagesEndRef = useRef(null);
 
   const messageSubmit = () => {
@@ -39,6 +38,7 @@ const RoomDetail = ({ id, name, currentUserName }) => {
     dispatch(postMessage(id, currentUserName, messageInputValue));
     // clear message text state
     setMessageInputValue("");
+    scrollToBottom();
   };
   // submit message on enter key
   const handleOnKeyDown = (event) => {

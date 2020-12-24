@@ -34,6 +34,7 @@ export const postMessage = (id, name, message) => async (dispatch) => {
 };
 
 const initState = {
+  // todo: add fetching and error status
   api: {},
 };
 
