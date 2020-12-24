@@ -10,8 +10,9 @@ export const loginUser = (username) => {
 };
 
 const initState = {
-  name: "test 1",
-  isLoggedIn: false,
+  // todo reset after dev complete
+  username: "test 1",
+  isLoggedIn: true,
 };
 
 const currentUser = (state = initState, action) => {
@@ -19,7 +20,7 @@ const currentUser = (state = initState, action) => {
     case LOGIN:
       return {
         ...state,
-        name: action.payload,
+        username: action.payload,
         isLoggedIn: true,
       };
     default:
