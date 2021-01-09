@@ -1,6 +1,6 @@
-import Login from "../pages/Login";
+import Login from '../pages/Login';
 
-const LOGIN = "LOGIN";
+const LOGIN = 'LOGIN';
 
 export const loginUser = (username) => {
   const startTime = new Date();
@@ -13,7 +13,7 @@ export const loginUser = (username) => {
 const initState = {
   // todo: add pending and error status
   api: {},
-  username: "",
+  username: '',
   isLoggedIn: false,
   startTime: null,
 };

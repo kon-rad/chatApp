@@ -1,7 +1,8 @@
-import roomsApi from "../apis/roomsApi";
+import roomsApi from '../apis/roomsApi';
 
-const FETCH_ROOM_MESSAGES = "FETCH_ROOM_MESSAGES";
-const POST_ROOM_MESSAGES = "POST_ROOM_MESSAGES";
+// todo: add request made, request success and fail actions
+const FETCH_ROOM_MESSAGES = 'FETCH_ROOM_MESSAGES';
+const POST_ROOM_MESSAGES = 'POST_ROOM_MESSAGES';
 
 export const fetchRoomMessages = (id) => async (dispatch) => {
   const response = await roomsApi.get(`/${id}/messages`);

@@ -1,9 +1,9 @@
-import React from "react";
-import classnames from "classnames";
-import "./TextInput.css";
+import React from 'react';
+import classnames from 'classnames';
+import './TextInput.css';
 
 const TextInput = ({
-  className = "",
+  className = '',
   onChange,
   name,
   value,
@@ -12,7 +12,7 @@ const TextInput = ({
 }) => {
   return (
     <input
-      className={classnames("TextInput", className)}
+      className={classnames('TextInput', className)}
       onChange={onChange}
       name={name}
       placeholder={placeholder}

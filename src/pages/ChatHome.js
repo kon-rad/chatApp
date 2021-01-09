@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { fetchRooms } from "../reducers/rooms";
-import { useInterval } from "../utils/hooks";
-import RoomDetail from "../components/organisms/RoomDetail";
-import UserInfo from "../components/molecules/UserInfo";
-import RoomsList from "../components/molecules/RoomsList";
-import "./ChatHome.css";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { fetchRooms } from '../reducers/rooms';
+import { useInterval } from '../utils/hooks';
+import RoomDetail from '../components/organisms/RoomDetail';
+import UserInfo from '../components/molecules/UserInfo';
+import RoomsList from '../components/molecules/RoomsList';
+import './ChatHome.css';
 
 const ChatHome = (props) => {
   const [currentRoomId, setCurrentRoomId] = useState();
@@ -14,7 +14,9 @@ const ChatHome = (props) => {
   const history = useHistory();
   // user must log in before being allowed to navigate to chat page
   const isLoggedIn = useSelector((state) => state.currentUser.isLoggedIn);
-  if (!isLoggedIn) history.push("/");
+  if (!isLoggedIn) {
+    history.push('/');
+  }
 
   const dispatch = useDispatch();
   useEffect(() => {

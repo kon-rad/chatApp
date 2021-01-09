@@ -1,6 +1,6 @@
-import roomsApi from "../apis/roomsApi";
+import roomsApi from '../apis/roomsApi';
 
-const FETCH_ROOMS_DETAIL = "FETCH_ROOMS_DETAIL";
+const FETCH_ROOMS_DETAIL = 'FETCH_ROOMS_DETAIL';
 
 export const fetchRoomsDetail = (id) => async (dispatch) => {
   const response = await roomsApi.get(`/${id}`);
